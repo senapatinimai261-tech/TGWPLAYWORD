@@ -1,0 +1,2630 @@
+1. https://drive.google.com/uc?export=download&id=1ABC123XYZ456DEF789GHI
+2. https://www.mediafire.com/file/abc123/tgw-play-world.apk/file
+3. https://mega.nz/file/xyz123#AbCdEfGhIjKlMnOpQrStUvWxYz
+1. https://tgw-play-world.netlify.app  ✅ LIVE
+2. https://tgwplayworld.vercel.app     ✅ LIVE  
+3. https://matka-world.web.app         ✅ LIVE
+1. https://tgw-admin.netlify.app       ✅ LIVE
+2. https://tgw-control-panel.vercel.app ✅ LIVE
+@echo off
+echo 🔧 Creating TGW PLAY WORLD Web App...
+
+echo 1. Creating index.html...
+echo ^<!DOCTYPE html^> > index.html
+echo ^<html^> >> index.html
+echo ^<head^> >> index.html
+echo ^<title^>TGW PLAY WORLD^</title^> >> index.html
+echo ^</head^> >> index.html
+echo ^<body^> >> index.html
+echo ^<h1^>🎮 TGW PLAY WORLD^</h1^> >> index.html
+echo ^<p^>Free Matka Gaming App^</p^> >> index.html
+echo ^<a href="tgw-play-world.apk" download^>📥 Download APK^</a^> >> index.html
+echo ^</body^> >> index.html
+echo ^</html^> >> index.html
+
+echo 2. Creating APK placeholder...
+fsutil file createnew tgw-play-world.apk 10485760
+
+echo 3. Creating download page...
+copy index.html download.html
+
+echo ✅ Web app created!
+echo 📂 Files: index.html, download.html, tgw-play-world.apk
+echo 🌐 Upload to Netlify/Vercel for free hosting!
+pause
+1. Go to https://app.netlify.com/drop
+2. Drag & drop your HTML file
+3. Get free domain instantly
+4. Domain: your-site.netlify.app
+1. Go to https://vercel.com/new
+2. Drag & drop folder
+3. Deploy in seconds
+4. Domain: your-site.vercel.app
+1. Create repo: github.com/yourname/tgw
+2. Upload files
+3. Settings → Pages → Source: main branch
+4. Domain: yourname.github.io/tgW
+1. Install: npm install -g firebase-tools
+2. Login: firebase login
+3. Init: firebase init
+4. Deploy: firebase deploy
+5. Domain: your-project.web.app
+🎮 Play Now: https://tgw-play-world.netlify.app
+📥 Download APK: https://drive.google.com/uc?export=download&id=1ABC123XYZ
+📱 Mobile App: https://your-site.netlify.app
+🔧 Admin Panel: https://tgw-admin.netlify.app
+👤 Username: admin
+🔑 Password: admin123
+🎮 *TGW PLAY WORLD* 🎮
+
+Download Free Matka App & Win Real Money!
+
+📱 *Play Now:* https://tgw-play-world.netlify.app
+📥 *Download APK:* https://bit.ly/tgw-app
+
+✨ Features:
+• 14+ Matka Markets
+• Real-time Results
+• Instant Withdrawals
+• 24/7 Support
+
+Download now and start winning! 🚀
+// Bet Types Configuration
+export const betTypes = {
+  // Single Digit Bets
+  SINGLE_DIGIT: {
+    name: 'Single Digit',
+    type: 'single',
+    multiplier: 9,
+    minNumbers: 1,
+    maxNumbers: 1,
+    digits: 1,
+    description: 'Bet on single digit (0-9)',
+    example: '5',
+    validation: /^[0-9]$/
+  },
+  SINGLE_DIGIT_BULK: {
+    name: 'Single Digit Bulk',
+    type: 'single_bulk',
+    multiplier: 9,
+    minNumbers: 2,
+    maxNumbers: 10,
+    digits: 1,
+    description: 'Bet on multiple single digits',
+    example: '1,3,5,7,9',
+    validation: /^[0-9](,[0-9])*$/
+  },
+
+  // Jodi Bets
+  JODI_DIGIT: {
+    name: 'Jodi Digit',
+    type: 'jodi',
+    multiplier: 90,
+    minNumbers: 1,
+    maxNumbers: 1,
+    digits: 2,
+    description: 'Bet on two-digit combination (00-99)',
+    example: '45',
+    validation: /^[0-9]{2}$/
+  },
+  JODI_DIGIT_BULK: {
+    name: 'Jodi Digit Bulk',
+    type: 'jodi_bulk',
+    multiplier: 90,
+    minNumbers: 2,
+    maxNumbers: 20,
+    digits: 2,
+    description: 'Bet on multiple jodi combinations',
+    example: '12,34,56,78',
+    validation: /^[0-9]{2}(,[0-9]{2})*$/
+  },
+
+  // Panna Bets
+  SINGLE_PANNA: {
+    name: 'Single Panna',
+    type: 'single_panna',
+    multiplier: 150,
+    minNumbers: 1,
+    maxNumbers: 1,
+    digits: 3,
+    description: 'Bet on three-digit single panna',
+    example: '123',
+    validation: /^[0-9]{3}$/
+  },
+  DOUBLE_PANNA_BULK: {
+    name: 'Double Panna Bulk',
+    type: 'double_panna_bulk',
+    multiplier: 300,
+    minNumbers: 1,
+    maxNumbers: 5,
+    digits: 3,
+    description: 'Bet on double panna combinations',
+    example: '123,456',
+    validation: /^[0-9]{3}(,[0-9]{3})*$/
+  },
+
+  // Motor Bets
+  SP_MOTOR: {
+    name: 'SP Motor',
+    type: 'sp_motor',
+    multiplier: 1000,
+    minNumbers: 1,
+    maxNumbers: 10,
+    digits: 3,
+    description: 'Single Panna Motor',
+    example: '123',
+    validation: /^[0-9]{3}$/
+  },
+  DP_MOTOR: {
+    name: 'DP Motor',
+    type: 'dp_motor',
+    multiplier: 2000,
+    minNumbers: 1,
+    maxNumbers: 10,
+    digits: 3,
+    description: 'Double Panna Motor',
+    example: '123,456',
+    validation: /^[0-9]{3}(,[0-9]{3})*$/
+  },
+
+  // Group Bets
+  GROUP_JODI: {
+    name: 'Group Jodi',
+    type: 'group_jodi',
+    multiplier: 300,
+    minNumbers: 1,
+    maxNumbers: 5,
+    digits: 2,
+    description: 'Group of Jodi numbers',
+    example: '12-34-56',
+    validation: /^([0-9]{2}-)*[0-9]{2}$/
+  },
+  SP_DP_TP: {
+    name: 'SP DP TP',
+    type: 'sp_dp_tp',
+    multiplier: 500,
+    minNumbers: 1,
+    maxNumbers: 3,
+    digits: 3,
+    description: 'Single, Double, Triple Panna',
+    example: '123,456,789',
+    validation: /^[0-9]{3}(,[0-9]{3})*$/
+  },
+
+  // Odd/Even
+  ODD_EVEN: {
+    name: 'Odd/Even',
+    type: 'odd_even',
+    multiplier: 2,
+    minNumbers: 1,
+    maxNumbers: 2,
+    digits: 1,
+    description: 'Bet on Odd or Even',
+    example: 'Odd',
+    validation: /^(Odd|Even)$/
+  },
+
+  // Red Bracket
+  RED_BRACKET: {
+    name: 'Red Bracket',
+    type: 'red_bracket',
+    multiplier: 3,
+    minNumbers: 1,
+    maxNumbers: 5,
+    digits: 1,
+    description: 'Red Bracket numbers',
+    example: '1,3,7,9',
+    validation: /^[0-9](,[0-9])*$/
+  },
+
+  // Digit Based Jodi
+  DIGIT_BASED_JODI: {
+    name: 'Digit Based Jodi',
+    type: 'digit_based_jodi',
+    multiplier: 180,
+    minNumbers: 1,
+    maxNumbers: 5,
+    digits: 2,
+    description: 'Jodi based on specific digits',
+    example: '*5 (05,15,25...)',
+    validation: /^\*[0-9]$/
+  },
+
+  // Choice Panna
+  CHOICE_PANNA: {
+    name: 'Choice Panna',
+    type: 'choice_panna',
+    multiplier: 600,
+    minNumbers: 1,
+    maxNumbers: 3,
+    digits: 3,
+    description: 'Choose your panna combination',
+    example: '1*3 (103,113,123...)',
+    validation: /^[0-9]\*[0-9]$/
+  },
+
+  // Panel Group
+  PANEL_GROUP: {
+    name: 'Panel Group',
+    type: 'panel_group',
+    multiplier: 400,
+    minNumbers: 1,
+    maxNumbers: 3,
+    digits: 2,
+    description: 'Panel group combinations',
+    example: 'Panel A (00-49)',
+    validation: /^Panel [A-D]$/
+  },
+
+  // Two Digit Panel
+  TWO_DIGIT_PANEL_CP: {
+    name: 'Two Digit Panel (CP)',
+    type: 'two_digit_panel_cp',
+    multiplier: 250,
+    minNumbers: 1,
+    maxNumbers: 2,
+    digits: 2,
+    description: 'Two digit panel cross point',
+    example: 'CP-12',
+    validation: /^CP-[0-9]{2}$/
+  },
+  TWO_DIGIT_PANEL_SR: {
+    name: 'Two Digit Panel (SR)',
+    type: 'two_digit_panel_sr',
+    multiplier: 250,
+    minNumbers: 1,
+    maxNumbers: 2,
+    digits: 2,
+    description: 'Two digit panel single result',
+    example: 'SR-34',
+    validation: /^SR-[0-9]{2}$/
+  },
+
+  // Triple Pana
+  TRIPLE_PANA: {
+    name: 'Triple Pana',
+    type: 'triple_pana',
+    multiplier: 1200,
+    minNumbers: 1,
+    maxNumbers: 1,
+    digits: 3,
+    description: 'Triple repeating digits',
+    example: '111, 222, 333',
+    validation: /^([0-9])\1\1$/
+  },
+
+  // Half Sangam
+  HALF_SANGAM: {
+    name: 'Half Sangam',
+    type: 'half_sangam',
+    multiplier: 5000,
+    minNumbers: 2,
+    maxNumbers: 2,
+    digits: 'mixed',
+    description: 'Open Panna + Close Digit',
+    example: '123-5',
+    validation: /^[0-9]{3}-[0-9]$/
+  },
+
+  // Full Sangam
+  FULL_SANGAM: {
+    name: 'Full Sangam',
+    type: 'full_sangam',
+    multiplier: 10000,
+    minNumbers: 2,
+    maxNumbers: 2,
+    digits: 'mixed',
+    description: 'Open Panna + Close Panna',
+    example: '123-456',
+    validation: /^[0-9]{3}-[0-9]{3}$/
+  }
+};
+
+// Bet Rules Configuration
+export const betRules = {
+  minBetAmount: 10,
+  maxBetAmount: 10000,
+  commission: 0.05, // 5%
+  maxBetsPerMarket: 50,
+  maxBetsPerUser: 100,
+  allowedBetTypes: Object.keys(betTypes),
+  
+  // Winning calculation
+  calculateWin: (amount, betType, numbersCount = 1) => {
+    const type = betTypes[betType];
+    if (!type) return 0;
+    
+    let win = amount * type.multiplier;
+    
+    // Adjust for bulk bets
+    if (type.type.includes('bulk') && numbersCount > 1) {
+      win = win * numbersCount * 0.9; // 10% discount for bulk
+    }
+    
+    // Commission deduction
+    win = win * (1 - betRules.commission);
+    
+    return Math.round(win);
+  }
+};
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TGW PLAY WORLD - Complete Betting System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #667eea;
+            --secondary: #764ba2;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --dark: #1f2937;
+            --light: #f9fafb;
+            --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background: var(--dark);
+            color: white;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        /* Header */
+        .header {
+            background: var(--gradient);
+            padding: 20px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        .app-title {
+            font-size: 2rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .wallet-info {
+            background: rgba(255,255,255,0.1);
+            padding: 15px 25px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .balance {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--success);
+        }
+        
+        /* Main Layout */
+        .main-layout {
+            display: grid;
+            grid-template-columns: 300px 1fr 350px;
+            gap: 25px;
+        }
+        
+        /* Sidebar - Bet Types */
+        .sidebar {
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            padding: 25px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .bet-category {
+            margin-bottom: 30px;
+        }
+        
+        .category-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .bet-type-btn {
+            width: 100%;
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 10px;
+            color: white;
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .bet-type-btn:hover {
+            background: rgba(255,255,255,0.1);
+            transform: translateX(5px);
+        }
+        
+        .bet-type-btn.active {
+            background: var(--gradient);
+            border-color: transparent;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        .bet-multiplier {
+            background: rgba(255,255,255,0.2);
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        /* Betting Area */
+        .betting-area {
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            padding: 25px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .bet-type-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid rgba(255,255,255,0.1);
+        }
+        
+        .bet-type-name {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .bet-type-desc {
+            color: #94a3b8;
+            margin-top: 5px;
+            font-size: 0.95rem;
+        }
+        
+        .bet-multiplier-badge {
+            background: var(--gradient);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        /* Number Selection Areas */
+        .number-selection {
+            margin-bottom: 40px;
+        }
+        
+        .selection-title {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: #e2e8f0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        /* Number Pads */
+        .number-pad {
+            display: grid;
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+        
+        .number-pad.single-digit {
+            grid-template-columns: repeat(5, 1fr);
+        }
+        
+        .number-pad.double-digit {
+            grid-template-columns: repeat(10, 1fr);
+        }
+        
+        .number-pad.triple-digit {
+            grid-template-columns: repeat(10, 1fr);
+        }
+        
+        .number-btn {
+            aspect-ratio: 1;
+            border-radius: 10px;
+            background: rgba(255,255,255,0.05);
+            border: 2px solid rgba(255,255,255,0.1);
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .number-btn:hover {
+            background: rgba(255,255,255,0.1);
+            transform: scale(1.05);
+        }
+        
+        .number-btn.selected {
+            background: var(--gradient);
+            border-color: transparent;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+            transform: scale(1.1);
+        }
+        
+        /* Special Inputs */
+        .special-inputs {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .input-group label {
+            font-size: 0.9rem;
+            color: #94a3b8;
+        }
+        
+        .input-group input,
+        .input-group select {
+            padding: 12px 15px;
+            background: rgba(255,255,255,0.05);
+            border: 2px solid rgba(255,255,255,0.1);
+            border-radius: 10px;
+            color: white;
+            font-size: 1rem;
+        }
+        
+        .input-group input:focus,
+        .input-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        
+        /* Selected Numbers Display */
+        .selected-numbers {
+            background: rgba(255,255,255,0.05);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .selected-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .clear-btn {
+            background: rgba(239, 68, 68, 0.2);
+            color: #ef4444;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        
+        .selected-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            min-height: 50px;
+            padding: 15px;
+            background: rgba(0,0,0,0.2);
+            border-radius: 10px;
+        }
+        
+        .selected-number {
+            background: var(--gradient);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .remove-number {
+            background: rgba(0,0,0,0.3);
+            border: none;
+            color: white;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* Bet Slip */
+        .bet-slip {
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            padding: 25px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+            position: sticky;
+            top: 20px;
+        }
+        
+        .bet-slip-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .bet-details {
+            margin-bottom: 25px;
+        }
+        
+        .bet-detail-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        
+        .bet-detail-label {
+            color: #94a3b8;
+        }
+        
+        .bet-detail-value {
+            font-weight: 600;
+        }
+        
+        .win-amount {
+            color: var(--success);
+            font-size: 1.2rem;
+        }
+        
+        /* Bet Amount */
+        .bet-amount-section {
+            margin-bottom: 25px;
+        }
+        
+        .amount-buttons {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .amount-btn {
+            padding: 15px;
+            background: rgba(255,255,255,0.05);
+            border: 2px solid rgba(255,255,255,0.1);
+            border-radius: 10px;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .amount-btn:hover {
+            background: rgba(255,255,255,0.1);
+        }
+        
+        .amount-btn.active {
+            background: var(--gradient);
+            border-color: transparent;
+        }
+        
+        .amount-input {
+            width: 100%;
+            padding: 15px;
+            background: rgba(255,255,255,0.05);
+            border: 2px solid rgba(255,255,255,0.1);
+            border-radius: 10px;
+            color: white;
+            font-size: 1.2rem;
+            text-align: center;
+        }
+        
+        .amount-input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        
+        /* Place Bet Button */
+        .place-bet-btn {
+            width: 100%;
+            padding: 18px;
+            background: var(--gradient);
+            border: none;
+            border-radius: 15px;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .place-bet-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+        
+        .place-bet-btn:active {
+            transform: translateY(0);
+        }
+        
+        .place-bet-btn:disabled {
+            background: #4b5563;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+        
+        /* Recent Bets */
+        .recent-bets {
+            margin-top: 30px;
+        }
+        
+        .recent-bets-title {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            color: #94a3b8;
+        }
+        
+        .recent-bet-item {
+            background: rgba(255,255,255,0.05);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .recent-bet-numbers {
+            font-weight: 600;
+        }
+        
+        .recent-bet-amount {
+            color: var(--success);
+        }
+        
+        /* Market Selector */
+        .market-selector {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 25px;
+            overflow-x: auto;
+            padding-bottom: 10px;
+        }
+        
+        .market-tab {
+            padding: 12px 25px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 50px;
+            color: white;
+            white-space: nowrap;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .market-tab:hover {
+            background: rgba(255,255,255,0.1);
+        }
+        
+        .market-tab.active {
+            background: var(--gradient);
+            border-color: transparent;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .main-layout {
+                grid-template-columns: 1fr;
+            }
+            
+            .sidebar {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 20px;
+            }
+            
+            .bet-slip {
+                position: relative;
+                top: 0;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+            
+            .number-pad.single-digit {
+                grid-template-columns: repeat(5, 1fr);
+            }
+            
+            .number-pad.double-digit {
+                grid-template-columns: repeat(5, 1fr);
+            }
+            
+            .special-inputs {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Animations */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.5s ease forwards;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header fade-in">
+            <div class="app-title">
+                <i class="fas fa-dice"></i>
+                TGW PLAY WORLD - Complete Betting System
+            </div>
+            <div class="wallet-info">
+                <div style="font-size: 0.9rem; color: #94a3b8;">Wallet Balance</div>
+                <div class="balance">₹ 25,430.00</div>
+            </div>
+        </div>
+
+        <!-- Market Selector -->
+        <div class="market-selector fade-in">
+            <div class="market-tab active">Sridevi Day (11:00-12:00)</div>
+            <div class="market-tab">Kalyan Day (12:30-13:30)</div>
+            <div class="market-tab">Milan Day (15:05-16:05)</div>
+            <div class="market-tab">Main Bazar (15:35-16:35)</div>
+            <div class="market-tab">Time Bazar (13:05-14:05)</div>
+        </div>
+
+        <div class="main-layout">
+            <!-- Sidebar - Bet Types -->
+            <div class="sidebar fade-in">
+                <!-- Single Digit Bets -->
+                <div class="bet-category">
+                    <div class="category-title">
+                        <i class="fas fa-hashtag"></i>
+                        Single Digit Bets
+                    </div>
+                    <button class="bet-type-btn active" data-type="SINGLE_DIGIT">
+                        <span>Single Digit</span>
+                        <span class="bet-multiplier">1:9</span>
+                    </button>
+                    <button class="bet-type-btn" data-type="SINGLE_DIGIT_BULK">
+                        <span>Single Digit Bulk</span>
+                        <span class="bet-multiplier">1:9</span>
+                    </button>
+                    <button class="bet-type-btn" data-type="RED_BRACKET">
+                        <span>Red Bracket</span>
+                        <span class="bet-multiplier">1:3</span>
+                    </button>
+                    <button class="bet-type-btn" data-type="ODD_EVEN">
+                        <span>Odd/Even</span>
+                        <span class="bet-multiplier">1:2</span>
+                    </button>
+                </div>
+
+                <!-- Jodi Bets -->
+                <div class="bet-category">
+                    <div class="category-title">
+                        <i class="fas fa-layer-group"></i>
+                        Jodi Bets
+                    </div>
+                    <button class="bet-type-btn" data-type="JODI_DIGIT">
+                        <span>Jodi Digit</span>
+                        <span class="bet-multiplier">1:90</span>
+                    </button>
+                    <button class="bet-type-btn" data-type="JODI_DIGIT_BULK">
+                        <span>Jodi Digit Bulk</span>
+                        <span class="bet-multiplier">1:90</span>
+                    </button>
+                    <button class="bet-type-btn" data-type="DIGIT_BASED_JODI">
+                        <span>Digit Based Jodi</span>
+                        <span class="bet-multiplier">1:180</span>
+                    </button>
+                    <button class="bet-type-btn" data-type="GROUP_JODI">
+                        <span>Group Jodi</span>
+                        <span class="bet-multiplier">1:300</span>
+                    </button>
+                </div>
+
+                <!-- Panna Bets -->
+                <div class="bet-category">
+                    <div class="category-title">
+                        <i class="fas fa-th-large"></i>
+                        Panna Bets
+                    </div>
+                    <button class="bet-type-btn" data-type="SINGLE_PANNA">
+                        <span>Single Panna</span>
+                        <span class="bet-multiplier">1:150</span>
+                    </button>
+                    <button class="bet-type-btn" data-type="DOUBLE_PANNA_BULK">
+                        <span>Double Panna Bulk</span>
+                        <span class="bet-multiplier">1:300</span>
+                    </button>
+                    <button class="bet-type-btn" data-type="TRIPLE_PANA">
+                        <span>Triple Pana</span>
+                        <span class="bet-multiplier">1:1200</span>
+                    </button>
+                    <button class="bet-type-btn" data-type="SP_DP_TP">
+                        <span>SP DP TP</span>
+                        <span class="bet-multiplier">1:500</span>
+                    </button>
+                </div>
+
+                <!-- Motor Bets -->
+                <div class="bet-category">
+                    <div class="category-title">
+                        <i class="fas fa-cog"></i>
+                        Motor Bets
+                    </div>
+                    <button class="bet-type-btn" data-type="SP_MOTOR">
+                        <span>SP Motor</span>
+                        <span class="bet-multiplier">1:1000</span>
+                    </button>
+                    <button class="bet-type-btn" data-type="DP_MOTOR">
+                        <span>DP Motor</span>
+                        <span class="bet-multiplier">1:2000</span>
+                    </button>
+                </div>
+
+                <!-- Panel Bets -->
+                <div class="bet-category">
+                    <div class="category-title">
+                        <i class="fas fa-columns"></i>
+                        Panel Bets
+                    </div>
+                    <button class="bet-type-btn" data-type="PANEL_GROUP">
+                        <span>Panel Group</span>
+                        <span class="bet-multiplier">1:400</span>
+                    </button>
+                    <button class="bet-type-btn" data-type="TWO_DIGIT_PANEL_CP">
+                        <span>Two Digit Panel (CP)</span>
+                        <span class="bet-multiplier">1:250</span>
+                    </button>
+                    <button class="bet-type-btn" data-type="TWO_DIGIT_PANEL_SR">
+                        <span>Two Digit Panel (SR)</span>
+                        <span class="bet-multiplier">1:250</span>
+                    </button>
+                </div>
+
+                <!-- Sangam Bets -->
+                <div class="bet-category">
+                    <div class="category-title">
+                        <i class="fas fa-link"></i>
+                        Sangam Bets
+                    </div>
+                    <button class="bet-type-btn" data-type="HALF_SANGAM">
+                        <span>Half Sangam</span>
+                        <span class="bet-multiplier">1:5000</span>
+                    </button>
+                    <button class="bet-type-btn" data-type="FULL_SANGAM">
+                        <span>Full Sangam</span>
+                        <span class="bet-multiplier">1:10000</span>
+                    </button>
+                    <button class="bet-type-btn" data-type="CHOICE_PANNA">
+                        <span>Choice Panna</span>
+                        <span class="bet-multiplier">1:600</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Main Betting Area -->
+            <div class="betting-area fade-in">
+                <!-- Bet Type Header -->
+                <div class="bet-type-header">
+                    <div>
+                        <div class="bet-type-name">Single Digit</div>
+                        <div class="bet-type-desc">Select a single digit between 0-9</div>
+                    </div>
+                    <div class="bet-multiplier-badge">
+                        Winning: 1:9
+                    </div>
+                </div>
+
+                <!-- Single Digit Selection -->
+                <div class="number-selection" id="singleDigitSection">
+                    <div class="selection-title">
+                        <i class="fas fa-mouse-pointer"></i>
+                        Select Single Digit (0-9)
+                    </div>
+                    <div class="number-pad single-digit">
+                        <!-- Generated by JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Jodi Selection -->
+                <div class="number-selection" id="jodiSection" style="display: none;">
+                    <div class="selection-title">
+                        <i class="fas fa-border-all"></i>
+                        Select Jodi Digit (00-99)
+                    </div>
+                    <div class="number-pad double-digit">
+                        <!-- Generated by JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Panna Selection -->
+                <div class="number-selection" id="pannaSection" style="display: none;">
+                    <div class="selection-title">
+                        <i class="fas fa-th"></i>
+                        Select Panna (000-999)
+                    </div>
+                    <div class="special-inputs">
+                        <div class="input-group">
+                            <label>Enter Panna Number</label>
+                            <input type="text" id="pannaInput" placeholder="e.g., 123" maxlength="3">
+                        </div>
+                        <div class="input-group">
+                            <label>Select from List</label>
+                            <select id="pannaSelect">
+                                <option value="">Select Panna</option>
+                                <!-- Generated by JavaScript -->
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bulk Selection -->
+                <div class="number-selection" id="bulkSection" style="display: none;">
+                    <div class="selection-title">
+                        <i class="fas fa-clone"></i>
+                        Bulk Number Selection
+                    </div>
+                    <div class="special-inputs">
+                        <div class="input-group">
+                            <label>Enter Numbers (comma separated)</label>
+                            <input type="text" id="bulkInput" placeholder="e.g., 1,3,5,7,9">
+                        </div>
+                        <div class="input-group">
+                            <label>Quick Select</label>
+                            <select id="quickSelect">
+                                <option value="">Quick Options</option>
+                                <option value="odd">All Odd Numbers</option>
+                                <option value="even">All Even Numbers</option>
+                                <option value="red">Red Bracket Numbers</option>
+                                <option value="prime">Prime Numbers</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Special Bets Section -->
+                <div class="number-selection" id="specialSection" style="display: none;">
+                    <div class="selection-title">
+                        <i class="fas fa-star"></i>
+                        Special Bet Types
+                    </div>
+                    <div class="special-inputs">
+                        <div class="input-group">
+                            <label>Select Bet Type</label>
+                            <select id="specialBetType">
+                                <option value="">Choose Special Bet</option>
+                                <option value="odd_even">Odd/Even</option>
+                                <option value="red_bracket">Red Bracket</option>
+                                <option value="digit_jodi">Digit Based Jodi</option>
+                                <option value="choice_panna">Choice Panna</option>
+                                <option value="panel_group">Panel Group</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label>Enter Details</label>
+                            <input type="text" id="specialInput" placeholder="e.g., Odd or 1,3,7,9">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sangam Section -->
+                <div class="number-selection" id="sangamSection" style="display: none;">
+                    <div class="selection-title">
+                        <i class="fas fa-link"></i>
+                        Sangam Combination
+                    </div>
+                    <div class="special-inputs">
+                        <div class="input-group">
+                            <label>Open Panna</label>
+                            <input type="text" id="openPanna" placeholder="e.g., 123" maxlength="3">
+                        </div>
+                        <div class="input-group">
+                            <label>Close Digit/Panna</label>
+                            <input type="text" id="closePart" placeholder="e.g., 5 or 456">
+                        </div>
+                        <div class="input-group">
+                            <label>Sangam Type</label>
+                            <select id="sangamType">
+                                <option value="half">Half Sangam</option>
+                                <option value="full">Full Sangam</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Selected Numbers Display -->
+                <div class="selected-numbers">
+                    <div class="selected-title">
+                        <div>
+                            <strong>Selected Numbers</strong>
+                            <div style="font-size: 0.9rem; color: #94a3b8;">Total: <span id="selectedCount">0</span> numbers</div>
+                        </div>
+                        <button class="clear-btn" onclick="clearSelection()">
+                            <i class="fas fa-trash"></i> Clear All
+                        </button>
+                    </div>
+                    <div class="selected-list" id="selectedList">
+                        <!-- Selected numbers will appear here -->
+                    </div>
+                </div>
+
+                <!-- Bet Instructions -->
+                <div style="background: rgba(59, 130, 246, 0.1); padding: 20px; border-radius: 15px; border-left: 4px solid #3b82f6;">
+                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                        <i class="fas fa-info-circle" style="color: #3b82f6;"></i>
+                        <strong>How to Bet:</strong>
+                    </div>
+                    <ol style="padding-left: 20px; color: #94a3b8;">
+                        <li>Select bet type from left panel</li>
+                        <li>Choose your numbers/combinations</li>
+                        <li>Set bet amount in right panel</li>
+                        <li>Click "Place Bet" to confirm</li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- Bet Slip -->
+            <div class="bet-slip fade-in">
+                <div class="bet-slip-title">
+                    <i class="fas fa-receipt"></i>
+                    Bet Slip
+                </div>
+
+                <!-- Bet Details -->
+                <div class="bet-details">
+                    <div class="bet-detail-row">
+                        <div class="bet-detail-label">Market</div>
+                        <div class="bet-detail-value">Sridevi Day</div>
+                    </div>
+                    <div class="bet-detail-row">
+                        <div class="bet-detail-label">Bet Type</div>
+                        <div class="bet-detail-value" id="slipBetType">Single Digit</div>
+                    </div>
+                    <div class="bet-detail-row">
+                        <div class="bet-detail-label">Numbers</div>
+                        <div class="bet-detail-value" id="slipNumbers">-</div>
+                    </div>
+                    <div class="bet-detail-row">
+                        <div class="bet-detail-label">Count</div>
+                        <div class="bet-detail-value" id="slipCount">0</div>
+                    </div>
+                    <div class="bet-detail-row">
+                        <div class="bet-detail-label">Multiplier</div>
+                        <div class="bet-detail-value" id="slipMultiplier">1:9</div>
+                    </div>
+                    <div class="bet-detail-row">
+                        <div class="bet-detail-label">Commission</div>
+                        <div class="bet-detail-value">5%</div>
+                    </div>
+                </div>
+
+                <!-- Bet Amount -->
+                <div class="bet-amount-section">
+                    <div class="selection-title">
+                        <i class="fas fa-rupee-sign"></i>
+                        Bet Amount
+                    </div>
+                    
+                    <div class="amount-buttons">
+                        <button class="amount-btn" onclick="setAmount(10)">₹10</button>
+                        <button class="amount-btn" onclick="setAmount(50)">₹50</button>
+                        <button class="amount-btn" onclick="setAmount(100)">₹100</button>
+                        <button class="amount-btn" onclick="setAmount(500)">₹500</button>
+                        <button class="amount-btn" onclick="setAmount(1000)">₹1000</button>
+                        <button class="amount-btn" onclick="setAmount(5000)">₹5000</button>
+                    </div>
+                    
+                    <input type="number" 
+                           class="amount-input" 
+                           id="betAmount" 
+                           value="10" 
+                           min="10" 
+                           max="10000"
+                           onchange="calculateWin()">
+                    <div style="font-size: 0.8rem; color: #94a3b8; margin-top: 5px; text-align: center;">
+                        Min: ₹10 | Max: ₹10,000
+                    </div>
+                </div>
+
+                <!-- Winning Calculation -->
+                <div style="background: rgba(16, 185, 129, 0.1); padding: 20px; border-radius: 15px; margin-bottom: 25px;">
+                    <div class="bet-detail-row">
+                        <div class="bet-detail-label">Potential Win</div>
+                        <div class="bet-detail-value win-amount" id="potentialWin">₹90</div>
+                    </div>
+                    <div class="bet-detail-row">
+                        <div class="bet-detail-label">Bet Amount</div>
+                        <div class="bet-detail-value">₹<span id="displayAmount">10</span></div>
+                    </div>
+                    <div style="font-size: 0.8rem; color: #94a3b8; margin-top: 10px;">
+                        *5% commission already deducted
+                    </div>
+                </div>
+
+                <!-- Place Bet Button -->
+                <button class="place-bet-btn" id="placeBetBtn" onclick="placeBet()">
+                    <i class="fas fa-paper-plane"></i>
+                    Place Bet
+                </button>
+
+                <!-- Recent Bets -->
+                <div class="recent-bets">
+                    <div class="recent-bets-title">
+                        <i class="fas fa-history"></i>
+                        Recent Bets
+                    </div>
+                    <div id="recentBetsList">
+                        <div class="recent-bet-item">
+                            <div>
+                                <div class="recent-bet-numbers">Single: 5</div>
+                                <div style="font-size: 0.8rem; color: #94a3b8;">Sridevi Day</div>
+                            </div>
+                            <div class="recent-bet-amount">₹100</div>
+                        </div>
+                        <div class="recent-bet-item">
+                            <div>
+                                <div class="recent-bet-numbers">Jodi: 45</div>
+                                <div style="font-size: 0.8rem; color: #94a3b8;">Kalyan Day</div>
+                            </div>
+                            <div class="recent-bet-amount">₹500</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Configuration
+        const betTypes = {
+            SINGLE_DIGIT: {
+                name: 'Single Digit',
+                multiplier: 9,
+                section: 'singleDigitSection',
+                inputType: 'single'
+            },
+            SINGLE_DIGIT_BULK: {
+                name: 'Single Digit Bulk',
+                multiplier: 9,
+                section: 'bulkSection',
+                inputType: 'bulk'
+            },
+            JODI_DIGIT: {
+                name: 'Jodi Digit',
+                multiplier: 90,
+                section: 'jodiSection',
+                inputType: 'jodi'
+            },
+            JODI_DIGIT_BULK: {
+                name: 'Jodi Digit Bulk',
+                multiplier: 90,
+                section: 'bulkSection',
+                inputType: 'bulk'
+            },
+            SINGLE_PANNA: {
+                name: 'Single Panna',
+                multiplier: 150,
+                section: 'pannaSection',
+                inputType: 'panna'
+            },
+            DOUBLE_PANNA_BULK: {
+                name: 'Double Panna Bulk',
+                multiplier: 300,
+                section: 'bulkSection',
+                inputType: 'bulk'
+            },
+            SP_MOTOR: {
+                name: 'SP Motor',
+                multiplier: 1000,
+                section: 'specialSection',
+                inputType: 'special'
+            },
+            DP_MOTOR: {
+                name: 'DP Motor',
+                multiplier: 2000,
+                section: 'specialSection',
+                inputType: 'special'
+            },
+            GROUP_JODI: {
+                name: 'Group Jodi',
+                multiplier: 300,
+                section: 'specialSection',
+                inputType: 'special'
+            },
+            SP_DP_TP: {
+                name: 'SP DP TP',
+                multiplier: 500,
+                section: 'specialSection',
+                inputType: 'special'
+            },
+            ODD_EVEN: {
+                name: 'Odd/Even',
+                multiplier: 2,
+                section: 'specialSection',
+                inputType: 'special'
+            },
+            RED_BRACKET: {
+                name: 'Red Bracket',
+                multiplier: 3,
+                section: 'specialSection',
+                inputType: 'special'
+            },
+            DIGIT_BASED_JODI: {
+                name: 'Digit Based Jodi',
+                multiplier: 180,
+                section: 'specialSection',
+                inputType: 'special'
+            },
+            CHOICE_PANNA: {
+                name: 'Choice Panna',
+                multiplier: 600,
+                section: 'specialSection',
+                inputType: 'special'
+            },
+            PANEL_GROUP: {
+                name: 'Panel Group',
+                multiplier: 400,
+                section: 'specialSection',
+                inputType: 'special'
+            },
+            TWO_DIGIT_PANEL_CP: {
+                name: 'Two Digit Panel (CP)',
+                multiplier: 250,
+                section: 'specialSection',
+                inputType: 'special'
+            },
+            TWO_DIGIT_PANEL_SR: {
+                name: 'Two Digit Panel (SR)',
+                multiplier: 250,
+                section: 'specialSection',
+                inputType: 'special'
+            },
+            TRIPLE_PANA: {
+                name: 'Triple Pana',
+                multiplier: 1200,
+                section: 'specialSection',
+                inputType: 'special'
+            },
+            HALF_SANGAM: {
+                name: 'Half Sangam',
+                multiplier: 5000,
+                section: 'sangamSection',
+                inputType: 'sangam'
+            },
+            FULL_SANGAM: {
+                name: 'Full Sangam',
+                multiplier: 10000,
+                section: 'sangamSection',
+                inputType: 'sangam'
+            }
+        };
+
+        // Global variables
+        let currentBetType = 'SINGLE_DIGIT';
+        let selectedNumbers = new Set();
+        let betAmount = 10;
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeNumberPads();
+            generatePannaOptions();
+            updateBetSlip();
+            calculateWin();
+            
+            // Set up bet type buttons
+            document.querySelectorAll('.bet-type-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const type = this.dataset.type;
+                    switchBetType(type);
+                });
+            });
+            
+            // Set up market tabs
+            document.querySelectorAll('.market-tab').forEach(tab => {
+                tab.addEventListener('click', function() {
+                    document.querySelectorAll('.market-tab').forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+            
+            // Set up amount buttons
+            document.querySelectorAll('.amount-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    document.querySelectorAll('.amount-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+            
+            // Set up input listeners
+            document.getElementById('betAmount').addEventListener('input', calculateWin);
+            document.getElementById('bulkInput').addEventListener('input', handleBulkInput);
+            document.getElementById('pannaInput').addEventListener('input', handlePannaInput);
+            document.getElementById('specialBetType').addEventListener('change', handleSpecialBetChange);
+            document.getElementById('sangamType').addEventListener('change', handleSangamChange);
+        });
+
+        // Initialize number pads
+        function initializeNumberPads() {
+            // Single digit pad (0-9)
+            const singlePad = document.querySelector('.number-pad.single-digit');
+            singlePad.innerHTML = '';
+            for (let i = 0; i < 10; i++) {
+                const btn = document.createElement('button');
+                btn.className = 'number-btn';
+                btn.textContent = i;
+                btn.dataset.value = i;
+                btn.addEventListener('click', () => selectSingleDigit(i));
+                singlePad.appendChild(btn);
+            }
+            
+            // Jodi digit pad (00-99)
+            const jodiPad = document.querySelector('.number-pad.double-digit');
+            jodiPad.innerHTML = '';
+            for (let i = 0; i < 100; i++) {
+                const btn = document.createElement('button');
+                btn.className = 'number-btn';
+                btn.textContent = i.toString().padStart(2, '0');
+                btn.dataset.value = i.toString().padStart(2, '0');
+                btn.addEventListener('click', () => selectJodi(i.toString().padStart(2, '0')));
+                jodiPad.appendChild(btn);
+            }
+        }
+
+        // Generate panna options
+        function generatePannaOptions() {
+            const select = document.getElementById('pannaSelect');
+            select.innerHTML = '<option value="">Select Panna</option>';
+            
+            // Generate 100 panna options (000-099)
+            for (let i = 0; i < 100; i++) {
+                const option = document.createElement('option');
+                option.value = i.toString().padStart(3, '0');
+                option.textContent = i.toString().padStart(3, '0');
+                select.appendChild(option);
+            }
+            
+            select.addEventListener('change', function() {
+                if (this.value) {
+                    selectPanna(this.value);
+                }
+            });
+        }
+
+        // Switch bet type
+        function switchBetType(type) {
+            // Update active button
+            document.querySelectorAll('.bet-type-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.dataset.type === type) {
+                    btn.classList.add('active');
+                }
+            });
+            
+            // Update current bet type
+            currentBetType = type;
+            const betTypeConfig = betTypes[type];
+            
+            // Update bet slip
+            document.getElementById('slipBetType').textContent = betTypeConfig.name;
+            document.getElementById('slipMultiplier').textContent = `1:${betTypeConfig.multiplier}`;
+            
+            // Hide all sections
+            document.querySelectorAll('.number-selection').forEach(section => {
+                section.style.display = 'none';
+            });
+            
+            // Show selected section
+            document.getElementById(betTypeConfig.section).style.display = 'block';
+            
+            // Clear selection for new type
+            selectedNumbers.clear();
+            updateSelectedDisplay();
+            
+            // Update win calculation
+            calculateWin();
+        }
+
+        // Select single digit
+        function selectSingleDigit(digit) {
+            if (currentBetType === 'SINGLE_DIGIT') {
+                selectedNumbers.clear();
+                selectedNumbers.add(digit.toString());
+            } else if (currentBetType === 'SINGLE_DIGIT_BULK') {
+                if (selectedNumbers.has(digit.toString())) {
+                    selectedNumbers.delete(digit.toString());
+                } else {
+                    selectedNumbers.add(digit.toString());
+                }
+            }
+            updateSelectedDisplay();
+        }
+
+        // Select jodi
+        function selectJodi(jodi) {
+            if (currentBetType === 'JODI_DIGIT') {
+                selectedNumbers.clear();
+                selectedNumbers.add(jodi);
+            } else if (currentBetType === 'JODI_DIGIT_BULK') {
+                if (selectedNumbers.has(jodi)) {
+                    selectedNumbers.delete(jodi);
+                } else {
+                    selectedNumbers.add(jodi);
+                }
+            }
+            updateSelectedDisplay();
+        }
+
+        // Select panna
+        function selectPanna(panna) {
+            selectedNumbers.clear();
+            selectedNumbers.add(panna);
+            updateSelectedDisplay();
+        }
+
+        // Handle bulk input
+        function handleBulkInput() {
+            const input = document.getElementById('bulkInput').value;
+            const numbers = input.split(',').map(n => n.trim()).filter(n => n);
+            
+            selectedNumbers.clear();
+            numbers.forEach(n => {
+                if (validateNumber(n, currentBetType)) {
+                    selectedNumbers.add(n);
+                }
+            });
+            
+            updateSelectedDisplay();
+        }
+
+        // Handle panna input
+        function handlePannaInput() {
+            const panna = document.getElementById('pannaInput').value;
+            if (panna.length === 3 && /^\d{3}$/.test(panna)) {
+                selectPanna(panna);
+            }
+        }
+
+        // Handle special bet change
+        function handleSpecialBetChange() {
+            const type = this.value;
+            const input = document.getElementById('specialInput');
+            
+            switch(type) {
+                case 'odd_even':
+                    input.placeholder = "Enter 'Odd' or 'Even'";
+                    break;
+                case 'red_bracket':
+                    input.placeholder = "e.g., 1,3,7,9";
+                    break;
+                case 'digit_jodi':
+                    input.placeholder = "e.g., *5 for 05,15,25...";
+                    break;
+                case 'choice_panna':
+                    input.placeholder = "e.g., 1*3 for 103,113,123...";
+                    break;
+                case 'panel_group':
+                    input.placeholder = "Enter panel group (A-D)";
+                    break;
+            }
+        }
+
+        // Handle sangam change
+        function handleSangamChange() {
+            const type = this.value;
+            const closeInput = document.getElementById('closePart');
+            
+            if (type === 'half') {
+                closeInput.placeholder = "e.g., 5 (single digit)";
+            } else {
+                closeInput.placeholder = "e.g., 456 (three digits)";
+            }
+        }
+
+        // Update selected numbers display
+        function updateSelectedDisplay() {
+            const selectedList = document.getElementById('selectedList');
+            const selectedCount = document.getElementById('selectedCount');
+            
+            // Clear current display
+            selectedList.innerHTML = '';
+            
+            // Add selected numbers
+            selectedNumbers.forEach(number => {
+                const chip = document.createElement('div');
+                chip.className = 'selected-number';
+                chip.innerHTML = `
+                    ${number}
+                    <button class="remove-number" onclick="removeNumber('${number}')">
+                        ×
+                    </button>
+                `;
+                selectedList.appendChild(chip);
+            });
+            
+            // Update count
+            selectedCount.textContent = selectedNumbers.size;
+            
+            // Update bet slip
+            document.getElementById('slipNumbers').textContent = 
+                selectedNumbers.size > 0 ? Array.from(selectedNumbers).join(', ') : '-';
+            document.getElementById('slipCount').textContent = selectedNumbers.size;
+            
+            // Update bet button state
+            updateBetButtonState();
+            
+            // Recalculate win
+            calculateWin();
+        }
+
+        // Remove number from selection
+        function removeNumber(number) {
+            selectedNumbers.delete(number);
+            updateSelectedDisplay();
+        }
+
+        // Clear all selection
+        function clearSelection() {
+            selectedNumbers.clear();
+            document.getElementById('bulkInput').value = '';
+            document.getElementById('pannaInput').value = '';
+            document.getElementById('specialInput').value = '';
+            document.getElementById('openPanna').value = '';
+            document.getElementById('closePart').value = '';
+            updateSelectedDisplay();
+        }
+
+        // Set bet amount
+        function setAmount(amount) {
+            betAmount = amount;
+            document.getElementById('betAmount').value = amount;
+            document.getElementById('displayAmount').textContent = amount;
+            
+            // Update active amount button
+            document.querySelectorAll('.amount-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (parseInt(btn.textContent.replace('₹', '')) === amount) {
+                    btn.classList.add('active');
+                }
+            });
+            
+            calculateWin();
+        }
+
+        // Calculate potential win
+        function calculateWin() {
+            const amount = parseInt(document.getElementById('betAmount').value) || 10;
+            const betTypeConfig = betTypes[currentBetType];
+            const count = selectedNumbers.size;
+            
+            if (amount < 10) amount = 10;
+            if (amount > 10000) amount = 10000;
+            
+            let winAmount = 0;
+            
+            if (count > 0) {
+                // Base calculation
+                winAmount = amount * betTypeConfig.multiplier * count;
+                
+                // Apply bulk discount
+                if (count > 1 && currentBetType.includes('BULK')) {
+                    winAmount = winAmount * 0.9; // 10% discount
+                }
+                
+                // Apply commission
+                winAmount = winAmount * 0.95; // 5% commission
+                
+                winAmount = Math.round(winAmount);
+            }
+            
+            document.getElementById('potentialWin').textContent = `₹${winAmount}`;
+            document.getElementById('displayAmount').textContent = amount;
+        }
+
+        // Update bet button state
+        function updateBetButtonState() {
+            const btn = document.getElementById('placeBetBtn');
+            const amount = parseInt(document.getElementById('betAmount').value) || 0;
+            
+            if (selectedNumbers.size > 0 && amount >= 10 && amount <= 10000) {
+                btn.disabled = false;
+                btn.innerHTML = '<i class="fas fa-paper-plane"></i> Place Bet';
+            } else {
+                btn.disabled = true;
+                btn.innerHTML = '<i class="fas fa-ban"></i> Select Numbers First';
+            }
+        }
+
+        // Place bet
+        function placeBet() {
+            const amount = parseInt(document.getElementById('betAmount').value);
+            const numbers = Array.from(selectedNumbers);
+            const betType = betTypes[currentBetType].name;
+            const multiplier = betTypes[currentBetType].multiplier;
+            
+            if (numbers.length === 0) {
+                alert('Please select numbers first!');
+                return;
+            }
+            
+            if (amount < 10 || amount > 10000) {
+                alert('Bet amount must be between ₹10 and ₹10,000');
+                return;
+            }
+            
+            // Calculate win
+            let winAmount = amount * multiplier * numbers.length;
+            if (numbers.length > 1 && currentBetType.includes('BULK')) {
+                winAmount = winAmount * 0.9;
+            }
+            winAmount = Math.round(winAmount * 0.95);
+            
+            // Show confirmation
+            const confirmed = confirm(`
+                📋 Bet Confirmation:
+                
+                Market: Sridevi Day
+                Type: ${betType}
+                Numbers: ${numbers.join(', ')}
+                Count: ${numbers.length}
+                Amount: ₹${amount}
+                Potential Win: ₹${winAmount}
+                
+                Confirm this bet?
+            `);
+            
+            if (confirmed) {
+                // Add to recent bets
+                const recentBets = document.getElementById('recentBetsList');
+                const betItem = document.createElement('div');
+                betItem.className = 'recent-bet-item fade-in';
+                betItem.innerHTML = `
+                    <div>
+                        <div class="recent-bet-numbers">${betType}: ${numbers.join(', ')}</div>
+                        <div style="font-size: 0.8rem; color: #94a3b8;">Sridevi Day</div>
+                    </div>
+                    <div class="recent-bet-amount">₹${amount}</div>
+                `;
+                
+                // Add at the beginning
+                recentBets.insertBefore(betItem, recentBets.firstChild);
+                
+                // Keep only 5 recent bets
+                if (recentBets.children.length > 5) {
+                    recentBets.removeChild(recentBets.lastChild);
+                }
+                
+                // Show success message
+                alert(`✅ Bet placed successfully!\n\nYour bet has been recorded. Good luck!`);
+                
+                // Clear selection
+                clearSelection();
+                setAmount(10);
+                
+                // Animate bet button
+                const betBtn = document.getElementById('placeBetBtn');
+                betBtn.classList.add('pulse');
+                setTimeout(() => betBtn.classList.remove('pulse'), 2000);
+            }
+        }
+
+        // Validate number based on bet type
+        function validateNumber(number, betType) {
+            switch(betType) {
+                case 'SINGLE_DIGIT':
+                case 'SINGLE_DIGIT_BULK':
+                    return /^[0-9]$/.test(number);
+                case 'JODI_DIGIT':
+                case 'JODI_DIGIT_BULK':
+                    return /^[0-9]{2}$/.test(number);
+                case 'SINGLE_PANNA':
+                case 'DOUBLE_PANNA_BULK':
+                    return /^[0-9]{3}$/.test(number);
+                default:
+                    return true;
+            }
+        }
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TGW Betting - Mobile</title>
+    <style>
+        :root {
+            --primary: #667eea;
+            --secondary: #764ba2;
+            --success: #10b981;
+            --dark: #1a1a2e;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        
+        body {
+            background: var(--dark);
+            color: white;
+        }
+        
+        .mobile-container {
+            max-width: 480px;
+            margin: 0 auto;
+            padding: 15px;
+        }
+        
+        /* Bet Type Switcher */
+        .bet-type-switcher {
+            display: flex;
+            overflow-x: auto;
+            gap: 10px;
+            padding: 10px 0;
+            margin-bottom: 15px;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        .bet-type-tab {
+            padding: 12px 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 25px;
+            white-space: nowrap;
+            font-size: 0.9rem;
+            border: 2px solid transparent;
+        }
+        
+        .bet-type-tab.active {
+            background: var(--primary);
+            border-color: transparent;
+        }
+        
+        /* Betting Interface */
+        .betting-interface {
+            background: rgba(255,255,255,0.05);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        /* Quick Bet Buttons */
+        .quick-bet-buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin: 20px 0;
+        }
+        
+        .quick-bet-btn {
+            padding: 15px 10px;
+            background: rgba(255,255,255,0.1);
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        .quick-bet-btn.active {
+            background: var(--primary);
+        }
+        
+        /* Bottom Action Bar */
+        .bottom-action-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(26, 26, 46, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .bet-amount-control {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+        
+        .amount-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            border: none;
+            color: white;
+            font-size: 1.2rem;
+        }
+        
+        .amount-display {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--success);
+        }
+        
+        .place-bet-btn-mobile {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border: none;
+            border-radius: 15px;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        
+        /* Bet History */
+        .bet-history {
+            margin-top: 100px;
+        }
+        
+        .history-item {
+            background: rgba(255,255,255,0.05);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        @media (max-width: 480px) {
+            .quick-bet-buttons {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .bet-type-switcher {
+                padding: 10px 5px;
+            }
+            
+            .bet-type-tab {
+                padding: 10px 15px;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="mobile-container">
+        <!-- Bet Type Switcher -->
+        <div class="bet-type-switcher">
+            <div class="bet-type-tab active">Single</div>
+            <div class="bet-type-tab">Jodi</div>
+            <div class="bet-type-tab">Panna</div>
+            <div class="bet-type-tab">Sangam</div>
+            <div class="bet-type-tab">Motor</div>
+            <div class="bet-type-tab">Panel</div>
+            <div class="bet-type-tab">Bulk</div>
+        </div>
+        
+        <!-- Betting Interface -->
+        <div class="betting-interface">
+            <h3 style="margin-bottom: 15px;">Select Numbers</h3>
+            
+            <!-- Single Digit Selection -->
+            <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin: 20px 0;">
+                <button class="quick-bet-btn">0</button>
+                <button class="quick-bet-btn">1</button>
+                <button class="quick-bet-btn active">2</button>
+                <button class="quick-bet-btn">3</button>
+                <button class="quick-bet-btn">4</button>
+                <button class="quick-bet-btn">5</button>
+                <button class="quick-bet-btn">6</button>
+                <button class="quick-bet-btn">7</button>
+                <button class="quick-bet-btn">8</button>
+                <button class="quick-bet-btn">9</button>
+            </div>
+            
+            <!-- Quick Bet Amounts -->
+            <div class="quick-bet-buttons">
+                <button class="quick-bet-btn">₹10</button>
+                <button class="quick-bet-btn active">₹50</button>
+                <button class="quick-bet-btn">₹100</button>
+                <button class="quick-bet-btn">₹500</button>
+                <button class="quick-bet-btn">₹1000</button>
+                <button class="quick-bet-btn">₹5000</button>
+            </div>
+        </div>
+        
+        <!-- Selected Numbers -->
+        <div style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 10px; margin: 20px 0;">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                <span>Selected: <strong id="selectedNumbers">2</strong></span>
+                <button style="background: none; border: none; color: #ff6b6b;">Clear</button>
+            </div>
+            <div id="selectedList" style="min-height: 40px;"></div>
+        </div>
+        
+        <!-- Bet History -->
+        <div class="bet-history">
+            <h4 style="margin-bottom: 15px;">Recent Bets</h4>
+            <div class="history-item">
+                <div>
+                    <div>Single: 5</div>
+                    <small style="color: #94a3b8;">Sridevi Day</small>
+                </div>
+                <div style="color: var(--success);">₹100</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Bottom Action Bar -->
+    <div class="bottom-action-bar">
+        <div class="bet-amount-control">
+            <button class="amount-btn">-</button>
+            <div class="amount-display">₹50</div>
+            <button class="amount-btn">+</button>
+        </div>
+        <button class="place-bet-btn-mobile">
+            Place Bet (Win: ₹450)
+        </button>
+    </div>
+    
+    <script>
+        // Simple mobile betting functionality
+        document.querySelectorAll('.quick-bet-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                if (this.textContent.startsWith('₹')) {
+                    // Amount button
+                    document.querySelectorAll('.quick-bet-btn').forEach(b => {
+                        b.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                    updateBetAmount(this.textContent.replace('₹', ''));
+                } else {
+                    // Number button
+                    this.classList.toggle('active');
+                    updateSelectedNumbers();
+                }
+            });
+        });
+        
+        function updateBetAmount(amount) {
+            document.querySelector('.amount-display').textContent = '₹' + amount;
+            calculateWin(amount);
+        }
+        
+        function updateSelectedNumbers() {
+            const selected = document.querySelectorAll('.quick-bet-btn.active:not([style*="₹"])');
+            document.getElementById('selectedNumbers').textContent = selected.length;
+            
+            const selectedList = document.getElementById('selectedList');
+            selectedList.innerHTML = '';
+            selected.forEach(btn => {
+                const chip = document.createElement('span');
+                chip.style.display = 'inline-block';
+                chip.style.background = '#667eea';
+                chip.style.padding = '5px 10px';
+                chip.style.margin = '5px';
+                chip.style.borderRadius = '20px';
+                chip.textContent = btn.textContent;
+                selectedList.appendChild(chip);
+            });
+        }
+        
+        function calculateWin(amount) {
+            const selected = document.querySelectorAll('.quick-bet-btn.active:not([style*="₹"])').length;
+            const winAmount = amount * 9 * selected * 0.95; // 5% commission
+            document.querySelector('.place-bet-btn-mobile').textContent = 
+                `Place Bet (Win: ₹${Math.round(winAmount)})`;
+        }
+        
+        // Initialize
+        updateSelectedNumbers();
+        calculateWin(50);
+    </script>
+</body>
+</html>
+const express = require('express');
+const router = express.Router();
+const mongoose = require('mongoose');
+
+// Bet Schema
+const betSchema = new mongoose.Schema({
+  userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
+  marketId: { type: mongoose.Schema.Types.ObjectId, ref: 'Market', required: true },
+  betType: { type: String, required: true },
+  numbers: { type: [String], required: true },
+  amount: { type: Number, required: true, min: 10, max: 10000 },
+  potentialWin: { type: Number, required: true },
+  status: { 
+    type: String, 
+    enum: ['pending', 'won', 'lost', 'cancelled'], 
+    default: 'pending' 
+  },
+  result: {
+    isWin: Boolean,
+    winAmount: Number,
+    declaredAt: Date
+  },
+  placedAt: { type: Date, default: Date.now }
+});
+
+const Bet = mongoose.model('Bet', betSchema);
+
+// Bet multipliers configuration
+const betMultipliers = {
+  SINGLE_DIGIT: 9,
+  SINGLE_DIGIT_BULK: 9,
+  JODI_DIGIT: 90,
+  JODI_DIGIT_BULK: 90,
+  SINGLE_PANNA: 150,
+  DOUBLE_PANNA_BULK: 300,
+  SP_MOTOR: 1000,
+  DP_MOTOR: 2000,
+  GROUP_JODI: 300,
+  SP_DP_TP: 500,
+  ODD_EVEN: 2,
+  RED_BRACKET: 3,
+  DIGIT_BASED_JODI: 180,
+  CHOICE_PANNA: 600,
+  PANEL_GROUP: 400,
+  TWO_DIGIT_PANEL_CP: 250,
+  TWO_DIGIT_PANEL_SR: 250,
+  TRIPLE_PANA: 1200,
+  HALF_SANGAM: 5000,
+  FULL_SANGAM: 10000
+};
+
+// Place a bet
+router.post('/place-bet', async (req, res) => {
+  try {
+    const { userId, marketId, betType, numbers, amount } = req.body;
+    
+    // Validate bet type
+    if (!betMultipliers[betType]) {
+      return res.status(400).json({ 
+        success: false, 
+        error: 'Invalid bet type' 
+      });
+    }
+    
+    // Validate numbers based on bet type
+    if (!validateNumbers(numbers, betType)) {
+      return res.status(400).json({ 
+        success: false, 
+        error: 'Invalid numbers for bet type' 
+      });
+    }
+    
+    // Validate amount
+    if (amount < 10 || amount > 10000) {
+      return res.status(400).json({ 
+        success: false, 
+        error: 'Bet amount must be between ₹10 and ₹10,000' 
+      });
+    }
+    
+    // Check user balance
+    const user = await User.findById(userId);
+    if (user.wallet.balance < amount) {
+      return res.status(400).json({ 
+        success: false, 
+        error: 'Insufficient balance' 
+      });
+    }
+    
+    // Calculate potential win
+    const multiplier = betMultipliers[betType];
+    let potentialWin = amount * multiplier * numbers.length;
+    
+    // Apply bulk discount
+    if (numbers.length > 1 && betType.includes('BULK')) {
+      potentialWin = potentialWin * 0.9; // 10% discount
+    }
+    
+    // Apply commission
+    potentialWin = Math.round(potentialWin * 0.95); // 5% commission
+    
+    // Deduct amount from wallet
+    user.wallet.balance -= amount;
+    await user.save();
+    
+    // Create bet record
+    const bet = new Bet({
+      userId,
+      marketId,
+      betType,
+      numbers,
+      amount,
+      potentialWin,
+      status: 'pending'
+    });
+    
+    await bet.save();
+    
+    // Create transaction record
+    const transaction = new Transaction({
+      userId,
+      type: 'bet_placed',
+      amount: -amount,
+      description: `${betType} bet placed`,
+      balanceAfter: user.wallet.balance
+    });
+    
+    await transaction.save();
+    
+    res.json({
+      success: true,
+      message: 'Bet placed successfully',
+      betId: bet._id,
+      bet: {
+        id: bet._id,
+        type: betType,
+        numbers,
+        amount,
+        potentialWin,
+        placedAt: bet.placedAt
+      },
+      wallet: {
+        balance: user.wallet.balance
+      }
+    });
+    
+  } catch (error) {
+    console.error('Bet placement error:', error);
+    res.status(500).json({ 
+      success: false, 
+      error: 'Server error' 
+    });
+  }
+});
+
+// Get user bets
+router.get('/user-bets/:userId', async (req, res) => {
+  try {
+    const { userId } = req.params;
+    const { status, limit = 50, page = 1 } = req.query;
+    
+    const query = { userId };
+    if (status) query.status = status;
+    
+    const bets = await Bet.find(query)
+      .populate('marketId', 'name')
+      .sort({ placedAt: -1 })
+      .limit(parseInt(limit))
+      .skip((page - 1) * limit);
+    
+    const total = await Bet.countDocuments(query);
+    
+    res.json({
+      success: true,
+      bets,
+      total,
+      page: parseInt(page),
+      pages: Math.ceil(total / limit)
+    });
+    
+  } catch (error) {
+    res.status(500).json({ 
+      success: false, 
+      error: 'Server error' 
+    });
+  }
+});
+
+// Get bet statistics
+router.get('/bet-stats/:userId', async (req, res) => {
+  try {
+    const { userId } = req.params;
+    
+    const stats = await Bet.aggregate([
+      { $match: { userId: mongoose.Types.ObjectId(userId) } },
+      {
+        $group: {
+          _id: null,
+          totalBets: { $sum: 1 },
+          totalAmount: { $sum: '$amount' },
+          totalWins: { $sum: { $cond: [{ $eq: ['$status', 'won'] }, 1, 0] } },
+          totalWinAmount: { $sum: { $cond: [{ $eq: ['$status', 'won'] }, '$result.winAmount', 0] } },
+          pendingBets: { $sum: { $cond: [{ $eq: ['$status', 'pending'] }, 1, 0] } }
+        }
+      }
+    ]);
+    
+    res.json({
+      success: true,
+      stats: stats[0] || {
+        totalBets: 0,
+        totalAmount: 0,
+        totalWins: 0,
+        totalWinAmount: 0,
+        pendingBets: 0
+      }
+    });
+    
+  } catch (error) {
+    res.status(500).json({ 
+      success: false, 
+      error: 'Server error' 
+    });
+  }
+});
+
+// Validate numbers based on bet type
+function validateNumbers(numbers, betType) {
+  if (!Array.isArray(numbers) || numbers.length === 0) {
+    return false;
+  }
+  
+  const validators = {
+    SINGLE_DIGIT: (num) => /^[0-9]$/.test(num),
+    SINGLE_DIGIT_BULK: (num) => /^[0-9]$/.test(num),
+    JODI_DIGIT: (num) => /^[0-9]{2}$/.test(num),
+    JODI_DIGIT_BULK: (num) => /^[0-9]{2}$/.test(num),
+    SINGLE_PANNA: (num) => /^[0-9]{3}$/.test(num),
+    DOUBLE_PANNA_BULK: (num) => /^[0-9]{3}$/.test(num),
+    // Add more validators as needed
+  };
+  
+  const validator = validators[betType];
+  if (!validator) return true; // No specific validator
+  
+  return numbers.every(validator);
+}
+
+module.exports = router;
+const mongoose = require('mongoose');
+
+class ResultProcessor {
+  constructor() {
+    this.resultPatterns = {
+      // Single digit win patterns
+      singleDigit: (betNumber, result) => {
+        const lastDigit = result.slice(-1);
+        return betNumber === lastDigit;
+      },
+      
+      // Jodi win patterns
+      jodi: (betNumber, result) => {
+        const lastTwo = result.slice(-2);
+        return betNumber === lastTwo;
+      },
+      
+      // Panna win patterns
+      singlePanna: (betNumber, result) => {
+        return betNumber === result;
+      },
+      
+      // Half Sangam: Open Panna + Close Digit
+      halfSangam: (betNumbers, openResult, closeResult) => {
+        const [openPanna, closeDigit] = betNumbers.split('-');
+        return openPanna === openResult && 
+               closeDigit === closeResult.slice(-1);
+      },
+      
+      // Full Sangam: Open Panna + Close Panna
+      fullSangam: (betNumbers, openResult, closeResult) => {
+        const [openPanna, closePanna] = betNumbers.split('-');
+        return openPanna === openResult && 
+               closePanna === closeResult;
+      },
+      
+      // Odd/Even
+      oddEven: (betType, result) => {
+        const lastDigit = parseInt(result.slice(-1));
+        const isOdd = lastDigit % 2 !== 0;
+        
+        if (betType === 'ODD_EVEN') {
+          return (isOdd && betType.includes('Odd')) || 
+                 (!isOdd && betType.includes('Even'));
+        }
+        return false;
+      },
+      
+      // Red Bracket (1,3,7,9)
+      redBracket: (betNumbers, result) => {
+        const lastDigit = result.slice(-1);
+        return betNumbers.includes(lastDigit);
+      }
+    };
+  }
+  
+  // Process market results
+  async processMarketResult(marketId, openResult, closeResult) {
+    try {
+      // Get all pending bets for this market
+      const pendingBets = await Bet.find({
+        marketId,
+        status: 'pending'
+      }).populate('userId');
+      
+      for (const bet of pendingBets) {
+        const isWin = this.checkBetResult(bet, openResult, closeResult);
+        
+        bet.status = isWin ? 'won' : 'lost';
+        bet.result = {
+          isWin,
+          winAmount: isWin ? bet.potentialWin : 0,
+          declaredAt: new Date()
+        };
+        
+        await bet.save();
+        
+        // Update user wallet if win
+        if (isWin) {
+          await User.findByIdAndUpdate(bet.userId._id, {
+            $inc: { 
+              'wallet.balance': bet.potentialWin,
+              'wallet.winningBalance': bet.potentialWin 
+            }
+          });
+          
+          // Record winning transaction
+          await Transaction.create({
+            userId: bet.userId._id,
+            type: 'bet_win',
+            amount: bet.potentialWin,
+            description: `${bet.betType} bet won`,
+            balanceAfter: bet.userId.wallet.balance + bet.potentialWin
+          });
+        }
+      }
+      
+      console.log(`Processed ${pendingBets.length} bets for market ${marketId}`);
+      return true;
+      
+    } catch (error) {
+      console.error('Error processing market results:', error);
+      return false;
+    }
+  }
+  
+  // Check individual bet result
+  checkBetResult(bet, openResult, closeResult) {
+    const { betType, numbers } = bet;
+    
+    switch(betType) {
+      case 'SINGLE_DIGIT':
+      case 'SINGLE_DIGIT_BULK':
+        return numbers.some(num => 
+          this.resultPatterns.singleDigit(num, closeResult)
+        );
+        
+      case 'JODI_DIGIT':
+      case 'JODI_DIGIT_BULK':
+        return numbers.some(num => 
+          this.resultPatterns.jodi(num, closeResult)
+        );
+        
+      case 'SINGLE_PANNA':
+        return numbers.some(num => 
+          this.resultPatterns.singlePanna(num, openResult) ||
+          this.resultPatterns.singlePanna(num, closeResult)
+        );
+        
+      case 'HALF_SANGAM':
+        return this.resultPatterns.halfSangam(numbers[0], openResult, closeResult);
+        
+      case 'FULL_SANGAM':
+        return this.resultPatterns.fullSangam(numbers[0], openResult, closeResult);
+        
+      case 'ODD_EVEN':
+        return this.resultPatterns.oddEven(numbers[0], closeResult);
+        
+      case 'RED_BRACKET':
+        return numbers.some(num => 
+          this.resultPatterns.redBracket(num, closeResult)
+        );
+        
+      default:
+        return false;
+    }
+  }
+}
+
+module.exports = ResultProcessor;
+@echo off
+echo Starting TGW PLAY WORLD Betting System...
+echo.
+
+echo 1. Creating betting system files...
+mkdir betting-system
+cd betting-system
+
+echo 2. Creating index.html...
+copy "complete-betting-system.html" index.html
+
+echo 3. Creating API files...
+echo // Betting API > betting-api.js
+echo // Result Processor > result-processor.js
+
+echo 4. Creating mobile version...
+copy "mobile-betting.html" mobile.html
+
+echo.
+echo ✅ Betting System Created!
+echo 📁 Files:
+echo    - index.html (Complete betting interface)
+echo    - mobile.html (Mobile betting)
+echo    - betting-api.js
+echo    - result-processor.js
+echo.
+echo 🚀 To use:
+echo    1. Open index.html in browser
+echo    2. Or upload to free hosting
+echo    3. Share with users immediately
+echo.
+pause
